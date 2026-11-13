@@ -92,7 +92,7 @@ export function PageContainer({ children, maxWidth = 'max-w-7xl', className = ''
   );
 }
 
-export function PageHeader({ eyebrow, title, subtitle, description, actions, badge }) {
+export function PageHeader({ eyebrow, title, subtitle, description, actions, badge, eyebrowClassName = "", titleClassName = "", subtitleClassName = "" }) {
   const desc = subtitle || description;
   const renderedActions = Array.isArray(actions)
     ? actions.map((a, i) => _renderAction(a, i))
@@ -111,7 +111,7 @@ export function PageHeader({ eyebrow, title, subtitle, description, actions, bad
           <p className="text-xs font-bold uppercase tracking-wider text-primary-600 mb-1">{eyebrow}</p>
         )}
         <div className="flex items-center gap-3">
-          <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">{title}</h1>
+          <h1 className={cn("text-3xl font-extrabold tracking-tight text-slate-900", titleClassName)}>{title}</h1>
           {renderedBadge && (
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-50 text-primary-700 border border-primary-200">
               {renderedBadge}
@@ -166,7 +166,7 @@ export function StatCard({
   target,
   className = '',
   valueClassName = '',
-  ...props
+  labelClassName = "", ...props
 }) {
   const isPos = deltaTone === 'positive';
   const colorMap = {
@@ -191,7 +191,7 @@ export function StatCard({
     >
       <div>
         <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-600">{label}</span>
+          <span className={cn("text-xs font-bold uppercase tracking-wider text-slate-600", labelClassName)}>{label}</span>
           {Icon && (
             <div className={cn("h-10 w-10 rounded-full flex items-center justify-center shadow-xs", iconClasses)}>
               <Icon className="h-5 w-5" />

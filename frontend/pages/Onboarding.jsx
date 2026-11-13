@@ -446,13 +446,13 @@ export default function Onboarding() {
                 )}
 
                 <div>
-                  <div className='text-xs font-bold uppercase tracking-wider text-slate-600 mb-1'>Why the agent rated it this way</div>
-                  <p className='text-sm text-slate-800 leading-relaxed'>{selected.reasoning ?? 'No written reasoning available.'}</p>
+                  <div className="text-xs font-bold uppercase tracking-wider mb-1 text-amber-500">Why the agent rated it this way</div>
+                  <p className="text-sm leading-relaxed text-green-600">{selected.reasoning ?? 'No written reasoning available.'}</p>
                 </div>
 
                 <div className='rounded-lg border border-primary-200 bg-primary-50 px-4 py-3'>
-                  <div className='text-xs font-bold uppercase tracking-wider text-primary-700'>Agent recommendation</div>
-                  <div className='text-sm font-bold text-slate-900 mt-0.5'>{selected.recommendation ?? 'No recommendation'}</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-purple-600">Agent recommendation</div>
+                  <div className="text-sm font-bold mt-0.5 text-red-600">{selected.recommendation ?? 'No recommendation'}</div>
                 </div>
 
                 {selDecision && !canDecide && (
