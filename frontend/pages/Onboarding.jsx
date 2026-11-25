@@ -294,7 +294,7 @@ export default function Onboarding() {
 
   return (
     <div className='space-y-6 sm:space-y-8'>
-      <PageHeader eyebrow='Onboarding Agent' title='Merchant Onboarding' subtitle='Talk to the agent on the left, then make the call on one application at a time on the right.' />
+      <PageHeader eyebrow='Onboarding Agent' title='Merchant Onboarding' subtitle='Talk to the agent on the left, then make the call on one application at a time on the right.' className="text-3xl font-extrabold tracking-tight text-amber-500"/>
 
       {toast && (
         <div className='flex items-center gap-2 px-4 py-3 rounded-xl border bg-emerald-50 border-emerald-200 text-emerald-700 text-sm font-semibold'>
@@ -452,7 +452,7 @@ export default function Onboarding() {
 
                 <div className='rounded-lg border border-primary-200 bg-primary-50 px-4 py-3'>
                   <div className="text-xs font-bold uppercase tracking-wider text-purple-600">Agent recommendation</div>
-                  <div className="text-sm font-bold mt-0.5 text-red-600">{selected.recommendation ?? 'No recommendation'}</div>
+                  <div className="text-sm font-bold mt-0.5 text-emerald-700">{selected.recommendation ?? 'No recommendation'}</div>
                 </div>
 
                 {selDecision && !canDecide && (
